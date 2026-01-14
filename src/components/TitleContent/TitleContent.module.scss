@@ -1,0 +1,135 @@
+.wrapper {
+  display: flex;
+  gap: clamp(1.375rem, 0.9666rem + 1.1733vw, 2.1875rem);
+  padding-bottom: clamp(1.875rem, 0.9324rem + 2.7076vw, 3.75rem);
+
+  .wrapperPoster {
+    .poster {
+      width: clamp(13.875rem, 6.3972rem + 21.4801vw, 28.75rem);
+      height: clamp(20.8125rem, 10.8526rem + 28.6101vw, 40.625rem);
+      border-radius: 10px;
+    }
+    .wrapperLink {
+      .linkTitle {
+        font-size: 18px;
+        padding-block: 20px;
+        color: #acaaaa;
+      }
+      .linkList {
+        display: flex;
+        gap: 18px;
+        .linkItem {
+          .linkItemImg {
+            width: clamp(2.5rem, 1.7459rem + 2.1661vw, 4rem);
+            aspect-ratio: 1;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 730px) {
+    display: block;
+
+    .wrapperPoster {
+      text-align: center;
+
+      .linkList {
+        justify-content: center;
+        padding-bottom: 30px;
+      }
+    }
+  }
+}
+
+.faworiteWrapper {
+  display: flex;
+  gap: clamp(0.625rem, 0.3108rem + 0.9025vw, 1.25rem);
+
+  .faworitePoster {
+    width: clamp(9.375rem, 6.2331rem + 9.0253vw, 15.625rem);
+    height: clamp(12.5rem, 7.7871rem + 13.5379vw, 21.875rem);
+    border-radius: 10px;
+  }
+}
+
+.wrapperContent {
+  .wrapperTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .contentTitle {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding-bottom: clamp(0.9375rem, 0.4662rem + 1.3538vw, 1.875rem);
+      gap: clamp(0.625rem, 0.3108rem + 0.9025vw, 1.25rem);
+
+      .title {
+        font-size: clamp(1.625rem, 0.4311rem + 3.4296vw, 4rem);
+        font-weight: 700;
+        padding-right: 10px;
+      }
+      .faworiteTitle {
+        font-size: clamp(1.125rem, 0.3081rem + 2.3466vw, 2.75rem);
+      }
+
+      .addButton {
+        padding: clamp(0.3125rem, 0.1554rem + 0.4513vw, 0.625rem);
+        font-size: clamp(0.75rem, 0.5987rem + 0.5848vw, 1.125rem);
+        border: 1px solid #ffffff;
+        border-radius: 60px;
+        background-color: transparent;
+        color: #ffffff;
+        &:hover {
+          border: 1px solid #ff3d81;
+        }
+      }
+
+      .addButtonFavorite {
+        padding: clamp(0.3125rem, 0.1554rem + 0.4513vw, 0.625rem);
+
+        font-size: clamp(0.75rem, 0.5987rem + 0.5848vw, 1.125rem);
+        border: 1px solid #ffffff;
+        border-radius: 60px;
+        background-color: transparent;
+        color: #ffffff;
+        &:hover {
+          border: 1px solid #ff3d81;
+        }
+      }
+      .active {
+        padding-inline: clamp(0.3125rem, 0.1554rem + 0.4513vw, 0.625rem);
+
+        color: #ff3d81;
+        border: 1px solid #ff3d81;
+      }
+    }
+    .wrapperRating {
+      .rating {
+        white-space: nowrap;
+        font-size: clamp(1rem, 0.8743rem + 0.361vw, 1.25rem);
+        color: #ffd233;
+      }
+    }
+    .wrapperRatingFavorite {
+      .rating {
+        white-space: nowrap;
+        font-size: clamp(0.75rem, 0.5615rem + 0.5415vw, 1.125rem);
+        color: #ffd233;
+      }
+    }
+  }
+
+  .contentDescription {
+    font-size: clamp(0.875rem, 0.7493rem + 0.361vw, 1.125rem);
+    padding-bottom: clamp(1.875rem, 1.2466rem + 1.8051vw, 3.125rem);
+  }
+
+  .faworiteDescription {
+    font-size: clamp(0.625rem, 0.3736rem + 0.722vw, 1.125rem);
+    // padding-bottom: clamp(1.875rem, 1.2466rem + 1.8051vw, 3.125rem);
+  }
+}

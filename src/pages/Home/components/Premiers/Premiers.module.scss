@@ -1,0 +1,46 @@
+.wrapper {
+  position: relative;
+
+  .container {
+    padding: 20px;
+    width: 100%;
+    overflow: hidden;
+
+    .slider {
+      --card-width: clamp(15.3125rem, 7.6148rem + 22.1119vw, 30.625rem); //245 490
+      --card-height: clamp(21.875rem, 10.5641rem + 32.491vw, 44.375rem); //350 710
+      --gap: 20px;
+
+      display: flex;
+      gap: var(--gap);
+      transition: transform 0.3s ease;
+    }
+  }
+  .button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    svg {
+      width: 24px;
+      aspect-ratio: 1;
+      fill: #b7b4b4;
+    }
+
+    &:hover {
+      border-radius: 10px;
+      .svg {
+        fill: #f9f8f8;
+      }
+    }
+  }
+
+  .buttonPrev {
+    left: -23px;
+    transform: rotate(180deg);
+  }
+
+  .buttonNext {
+    right: -23px;
+  }
+}

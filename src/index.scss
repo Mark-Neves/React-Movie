@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'Inter 18pt';
+  src: url('/fonts/InterFont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  padding: 0;
+  font-family: 'Intro', sans-serif;
+  margin: 0;
+  list-style: none;
+  outline: none;
+  box-sizing: border-box;
+  color: #ffffff;
+}
+
+.container {
+  min-height: calc(
+    100vh -
+      (
+        clamp(2.625rem, 1.2426rem + 3.9711vw, 5.375rem) +
+          clamp(2.5625rem, 1.4942rem + 3.0686vw, 4.6875rem)
+      )
+  );
+  padding-top: clamp(1.25rem, -0.0068rem + 3.6101vw, 3.75rem);
+  padding-inline: clamp(1.5625rem, 0.4628rem + 3.1588vw, 3.75rem);
+  background-color: #181818;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 34px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+}

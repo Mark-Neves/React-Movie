@@ -1,0 +1,18 @@
+.wrapperDetails {
+  .detailsTitle {
+    font-size: clamp(1.375rem, 0.8723rem + 1.444vw, 2.375rem);
+    font-weight: 700;
+    padding-bottom: clamp(0.625rem, 0.3108rem + 0.9025vw, 1.25rem);
+  }
+  table {
+    td {
+      padding-block: clamp(0.625rem, 0.4679rem + 0.4513vw, 0.9375rem);
+      color: #acaaaa;
+      font-size: clamp(0.875rem, 0.7493rem + 0.361vw, 1.125rem);
+
+      &:first-child {
+        padding-right: clamp(1.25rem, -1.2635rem + 7.2202vw, 6.25rem);
+      }
+    }
+  }
+}

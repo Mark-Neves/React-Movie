@@ -1,0 +1,5 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.625rem, -0.0034rem + 1.8051vw, 1.875rem);
+}

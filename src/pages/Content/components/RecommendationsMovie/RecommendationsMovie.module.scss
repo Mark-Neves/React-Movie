@@ -1,0 +1,16 @@
+.recomendationWrapper {
+  position: relative;
+  padding-top: clamp(1.875rem, -0.3243rem + 6.3177vw, 6.25rem);
+
+  .recomendationTitle {
+    position: absolute;
+    top: clamp(-0.875rem, -1.9433rem + 3.0686vw, 1.25rem);
+    left: 0px;
+    padding: 10px 20px;
+    font-family: Arial;
+    font-size: clamp(0.75rem, 0.5987rem + 0.5848vw, 1.125rem);
+    border: 1px solid #ffffff;
+    border-radius: 60px;
+    color: #ffffff;
+  }
+}

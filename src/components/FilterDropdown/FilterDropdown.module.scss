@@ -1,0 +1,40 @@
+.dropDown {
+  position: absolute;
+  top: 50px;
+  left: 10px;
+
+  padding: 5px;
+
+  max-height: 350px;
+  overflow-y: auto;
+
+  z-index: 1000;
+
+  background-color: rgba($color: #424242, $alpha: 0.5);
+  border: 1px solid #1f1f1f;
+  border-radius: 10px;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #ff3d81;
+    border-radius: 4px;
+  }
+
+  .dropDownList {
+    display: grid;
+    grid-column-gap: 25px;
+    grid-row-gap: 8px;
+
+    .dropDownItem {
+      border-radius: 10px;
+      padding: 5px 7px;
+      white-space: nowrap;
+      &:hover {
+        color: #ffffff;
+        background-color: #1f1f1f;
+      }
+    }
+  }
+}

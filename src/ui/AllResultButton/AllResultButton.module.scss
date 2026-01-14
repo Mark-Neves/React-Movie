@@ -1,0 +1,22 @@
+.link {
+  position: relative;
+  color: #ffffff;
+  font-size: clamp(0.625rem, 0.4365rem + 0.5415vw, 1rem);
+  .button {
+    position: absolute;
+    top: 0px;
+    right: -10px;
+    fill: #ffffff;
+    svg {
+      width: 8px;
+      height: 18px;
+    }
+  }
+
+  &:hover {
+    color: #ff3d81;
+    .button {
+      fill: #ff3d81;
+    }
+  }
+}

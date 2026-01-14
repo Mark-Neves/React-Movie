@@ -1,0 +1,15 @@
+.category {
+  position: relative;
+
+  .wrapperTitle {
+    margin-bottom: 20px;
+    .titleCategory {
+      padding: 10px 20px;
+      font-family: Arial;
+      font-size: clamp(0.75rem, 0.5987rem + 0.5848vw, 1.125rem);
+      border: 1px solid #ffffff;
+      border-radius: 60px;
+      color: #ffffff;
+    }
+  }
+}

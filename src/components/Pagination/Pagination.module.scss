@@ -1,0 +1,28 @@
+.wrapperPagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 15px;
+
+  .button {
+    padding: 10px;
+
+    svg {
+      width: 20px;
+      aspect-ratio: 1;
+      fill: #ffffff;
+    }
+    &:hover {
+      svg {
+        fill: #ff3d81;
+      }
+    }
+  }
+  .buttonPrev {
+    transform: rotate(180deg);
+  }
+
+  .contentPagination {
+    margin-inline: 20px;
+  }
+}

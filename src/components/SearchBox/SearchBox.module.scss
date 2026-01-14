@@ -1,0 +1,22 @@
+.container {
+  position: absolute;
+  top: 86px;
+  width: 100%;
+  z-index: 5000;
+  background-color: rgba($color: #1f1f1f, $alpha: 0.8);
+  padding: 0 40px 0 40px;
+  border-radius: 0 0 40px 40px;
+  color: #ffffff;
+
+  .title {
+    padding-top: 15px;
+    font-size: clamp(1.125rem, 0.9365rem + 0.5415vw, 1.5rem);
+  }
+  .noResult {
+    padding-block: 15px;
+    font-size: clamp(0.875rem, 0.7493rem + 0.361vw, 1.125rem);
+  }
+}
+.hidden {
+  display: none;
+}

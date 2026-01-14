@@ -1,0 +1,23 @@
+.emptyContainer {
+  min-height: calc(
+    100vh -
+      (
+        clamp(2.625rem, 1.2426rem + 3.9711vw, 5.375rem) +
+          clamp(2.5625rem, 1.4942rem + 3.0686vw, 4.6875rem)
+      ) - clamp(2.5rem, -0.0135rem + 7.2202vw, 7.5rem)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .emptyTitle {
+    font-size: clamp(1.875rem, 1.4037rem + 1.3538vw, 2.8125rem);
+    padding-bottom: 15px;
+    color: #b4b2b2;
+  }
+  .emptyDescription {
+    text-align: center;
+    font-size: clamp(0.875rem, 0.5922rem + 0.8123vw, 1.4375rem);
+    color: #b4b2b2;
+  }
+}

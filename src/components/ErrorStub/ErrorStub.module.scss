@@ -1,0 +1,19 @@
+.errorContainer {
+  width: 100%;
+  height: 100%;
+  padding-block: clamp(1.25rem, 0.3074rem + 2.7076vw, 3.125rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .errorTitle {
+    font-size: clamp(1.875rem, 1.4037rem + 1.3538vw, 2.8125rem);
+    padding-bottom: 15px;
+    color: #b4b2b2;
+  }
+  .errorDescription {
+    text-align: center;
+    font-size: clamp(0.875rem, 0.5922rem + 0.8123vw, 1.4375rem);
+    color: #b4b2b2;
+  }
+}
