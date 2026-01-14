@@ -45,9 +45,12 @@ export function Premiers() {
             }}
           >
             {premierMovies.length === 0
-              ? [...new Array(6)].map((_, i) => <SkeletonPremiers key={i} />)
+              ? [...new Array(6)].map((_, i) => (
+                  <SkeletonPremiers key={i} className={styles.skeliton} />
+                ))
               : premierMovies.map((movie) => (
                   <PremiersItem
+                    className={styles.content}
                     key={movie.kinopoiskId}
                     movie={movie}
                     info={[
