@@ -8,8 +8,12 @@ export function PopularProvider({ children }) {
   //POPULAR_MOVIES
   //Состояние выбранной коллекции
   const [activeCollection, setActiveCollection] = useState(0);
-  const handleCollection = useCallback((i) => setActiveCollection(i), []);
   const [pagePopular, setPagePopular] = useState(1);
+
+  const handleCollection = useCallback((i) => {
+    setActiveCollection(i);
+    setPagePopular(1);
+  }, []);
 
   const {
     dataArr: topMovies,

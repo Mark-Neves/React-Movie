@@ -8,11 +8,11 @@ export const FilterButton = memo(function FilterButton({
   isActive,
   toggleFilter,
 }) {
+  const updateFilter = () => {
+    toggleFilter(activeFilter);
+  };
   return (
-    <button
-      onClick={() => toggleFilter(activeFilter)}
-      className={`${styles.button} ${isActive ? styles.active : ''}`}
-    >
+    <button onClick={updateFilter} className={`${styles.button} ${isActive ? styles.active : ''}`}>
       {value}
       <span className={styles.buttonImg}>
         <ButtonSvg />

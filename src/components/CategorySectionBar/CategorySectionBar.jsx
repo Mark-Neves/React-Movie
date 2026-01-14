@@ -15,7 +15,10 @@ import { CategoryContext } from '../helpers/GlobalContext';
 import { useCallback } from 'react';
 
 export function CategorySectionBar() {
-  const { filters, setFilter } = useContext(CategoryContext);
+  const { filters, setFilter, setPageCategory } = useContext(CategoryContext);
+  const resetPages = () => {
+    setPageCategory(1);
+  };
   const filtersArr = Object.entries(filters);
 
   //Указывает какой фильтр открыт
@@ -66,6 +69,7 @@ export function CategorySectionBar() {
       },
     }));
     setOpenFilter(null);
+    resetPages();
   };
 
   // ЖАНРЫ и СТРАНЫ
@@ -76,6 +80,7 @@ export function CategorySectionBar() {
   // Очистка фильтров
   const filtersClear = () => {
     setFilter({ ...defoltFilter });
+    resetPages();
   };
   // Передает в дропдаун конкретный фильтр
   const dataDropdown = useMemo(
@@ -103,6 +108,7 @@ export function CategorySectionBar() {
                     value={value.label}
                     isActive={isActive}
                     toggleFilter={toggleFilter}
+                    resetPages={resetPages}
                   />
                 )}
 

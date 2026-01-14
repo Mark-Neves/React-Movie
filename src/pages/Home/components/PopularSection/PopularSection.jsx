@@ -14,7 +14,7 @@ export function PopularSection({ cardLimited, isCompact, visibleRows }) {
   const { topMovies, errorTop, setPagePopular } = useContext(PopularContext);
   useEffect(() => {
     setPagePopular(1);
-  });
+  }, []);
 
   let content;
   if (errorTop) content = <ErrorStub />;

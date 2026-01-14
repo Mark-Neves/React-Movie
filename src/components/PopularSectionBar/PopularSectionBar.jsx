@@ -7,6 +7,7 @@ import { PopularContext } from '../helpers/GlobalContext';
 
 export function PopularSectionBar() {
   const { handleCollection, activeCollection } = useContext(PopularContext);
+
   return (
     <div className={styles.typeWrapper}>
       {collections.map((el, i) => (
