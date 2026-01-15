@@ -2,7 +2,7 @@ import styles from './TitleContent.module.scss';
 
 import { Link } from 'react-router-dom';
 
-import { favoritesItem } from '../helpers/filterConfig';
+import { dataStorage, favoritesItem } from '../helpers/filterConfig';
 
 import { TableDetails } from '../../pages/Content/components/TableDetails/TableDetails';
 import { useState } from 'react';
@@ -11,8 +11,8 @@ import { useEffect } from 'react';
 export function TitleContent({ movie, linkList, actorList, isCompact = false }) {
   const { kinopoiskId, filmId, posterUrl, nameRu, description } = movie;
 
-  const storage = JSON.parse(localStorage.getItem('favorite'));
-  const [favoritesList, setFavoritesList] = useState(storage ? [...storage] : []);
+  const storage = dataStorage.get('favorite', []);
+  const [favoritesList, setFavoritesList] = useState(storage);
 
   const isFavorite = (id) => {
     return favoritesList.some((el) => el.id === id);
@@ -29,13 +29,13 @@ export function TitleContent({ movie, linkList, actorList, isCompact = false }) 
   };
 
   useEffect(() => {
-    localStorage.setItem('favorite', JSON.stringify(favoritesList));
+    dataStorage.set('favorite', favoritesList);
   }, [favoritesList]);
 
   const id = kinopoiskId ?? filmId;
   const favorite = isFavorite(id);
 
-  const wrapper = isCompact ? styles.faworiteWrapper : styles.wrapper;
+  const wrapper = isCompact ? styles.favoriteWrapper : styles.wrapper;
   const poster = isCompact ? styles.faworitePoster : styles.poster;
   const title = isCompact ? styles.faworiteTitle : styles.title;
   const addButton = isCompact ? styles.addButtonFavorite : styles.addButton;

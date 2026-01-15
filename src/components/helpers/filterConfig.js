@@ -1,3 +1,27 @@
+export const dataStorage = {
+  get(key = 'favorite', value = []) {
+    try {
+      const data = JSON.parse(localStorage.getItem(key));
+      return data ?? value;
+    } catch {
+      localStorage.setItem(key, JSON.stringify(value));
+      return value;
+    }
+  },
+  set(key = 'favorite', value = []) {
+    return localStorage.setItem(key, JSON.stringify(value));
+  },
+  remove(key) {
+    return localStorage.removeItem(key);
+  },
+  clear() {
+    return localStorage.clear();
+  },
+  length() {
+    return localStorage.length;
+  },
+};
+
 export const debaunce = (func, delay) => {
   let timer;
   const debaunceFunc = (...args) => {
