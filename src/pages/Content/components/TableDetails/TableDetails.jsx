@@ -1,8 +1,9 @@
 import styles from './TableDetails.module.scss';
 
 import { dateTable } from '../../../../components/helpers/filterConfig';
+import { memo } from 'react';
 
-export function TableDetails({ movie, actorList, isCompact }) {
+export const TableDetails = memo(function TableDetails({ movie, actorList, isCompact }) {
   return (
     <div className={styles.wrapperDetails}>
       {!isCompact && <h3 className={styles.detailsTitle}>О фильме</h3>}
@@ -28,4 +29,4 @@ export function TableDetails({ movie, actorList, isCompact }) {
       </table>
     </div>
   );
-}
+});

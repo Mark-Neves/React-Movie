@@ -1,0 +1,14 @@
+.wrapperRating {
+  .rating {
+    white-space: nowrap;
+    font-size: clamp(1rem, 0.8743rem + 0.361vw, 1.25rem);
+    color: var(--color-rating);
+  }
+}
+.wrapperRatingFavorite {
+  .rating {
+    white-space: nowrap;
+    font-size: clamp(0.75rem, 0.5615rem + 0.5415vw, 1.125rem);
+    color: var(--color-rating);
+  }
+}

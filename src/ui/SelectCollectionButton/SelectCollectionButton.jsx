@@ -1,9 +1,15 @@
+import { PopularContext } from '../../components/helpers/GlobalContext';
 import styles from './SelectCollectionButton.module.scss';
 
-export function SelectCollectionButton({ element, index, active, handleCollection }) {
+import { useContext } from 'react';
+
+export function SelectCollectionButton({ element, index }) {
+  const { handleCollection, activeCollection } = useContext(PopularContext);
+
   return (
     <button
-      className={`${styles.typeCollection} ${active === index ? styles.active : ''}`}
+      data-testid='popular-button'
+      className={`${styles.typeCollection} ${activeCollection === index ? styles.active : ''}`}
       onClick={() => handleCollection(index)}
     >
       Популярные {element?.label}

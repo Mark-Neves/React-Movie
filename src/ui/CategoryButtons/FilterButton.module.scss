@@ -7,14 +7,15 @@
   gap: 10px;
 
   font-size: 16px;
-  color: #ffffff;
+  color: var(--color-white);
 
   text-align: left;
 
-  border: 1px solid rgba(21, 21, 21, 0.28);
-  border-radius: 59px;
+  border-color: rgba(21, 21, 21, 0.28);
+  border-radius: var(--border-radius-xl);
+
   padding-inline: clamp(0.625rem, 0.4679rem + 0.4513vw, 0.9375rem);
-  font-size: clamp(0.75rem, 0.5987rem + 0.5848vw, 1.125rem);
+  font-size: var(--fs-14-18);
 
   background-color: transparent;
 
@@ -23,15 +24,15 @@
     width: 25px;
     transform: rotate(90deg);
 
-    fill: #ffffff;
+    fill: var(--color-white);
   }
   &:hover {
-    color: #ff3d81;
+    color: var(--color-accent);
     svg {
-      fill: #ff3d81;
+      fill: var(--color-accent);
     }
     .buttonSortImg {
-      fill: #ff3d81;
+      fill: var(--color-accent);
     }
   }
   @media (max-width: 1000px) {
@@ -42,11 +43,11 @@
 }
 
 .active {
-  border: 1px solid #ffffff;
-  color: #ffffff;
+  border-color: var(--color-white);
+  color: var(--color-white);
 
   .buttonImg {
-    fill: #ffffff;
+    fill: var(--color-white);
   }
 }
 
@@ -58,7 +59,7 @@
     height: 22px;
     width: 25px;
     transform: rotate(90deg);
-    fill: #ffffff;
+    fill: var(--color-white);
     transform: rotate(180deg);
   }
 
@@ -71,7 +72,7 @@
     aspect-ratio: 1;
     border-radius: 50%;
     border: none;
-    background-color: #ffffff;
+    background-color: var(--color-white);
   }
 
   @media (max-width: 1290px) {

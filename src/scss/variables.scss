@@ -1,0 +1,23 @@
+:root {
+  /* colors */
+  --color-white: #ffffff;
+  --color-gray-skeleton: #6a6868;
+  --color-gray-text: #b4b2b2;
+  --color-table-text: #acaaaa;
+  --color-accent: #ff3d81;
+  --color-rating: #ffd233;
+  --color-background: #1f1f1f;
+  --color-input: #3a3a3a;
+
+  /* font-size */
+  --fs-12-16: clamp(0.75rem, 0.6491rem + 0.3899vw, 1rem);
+  --fs-14-18: clamp(0.875rem, 0.7493rem + 0.361vw, 1.125rem);
+  --fs-16-23: clamp(0.875rem, 0.5922rem + 0.8123vw, 1.4375rem);
+  --fs-30-45: clamp(1.875rem, 1.4037rem + 1.3538vw, 2.8125rem);
+
+  /* border-radius */
+  --border-radius-s: 5px;
+  --border-radius-m: 10px;
+  --border-radius-l: 15px;
+  --border-radius-xl: 60px;
+}

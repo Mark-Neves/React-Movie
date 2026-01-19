@@ -12,7 +12,7 @@
   list-style: none;
   outline: none;
   box-sizing: border-box;
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 .container {
@@ -43,7 +43,6 @@ h2 {
 
 button {
   cursor: pointer;
-  border: none;
   background-color: transparent;
   border: 1px solid transparent;
 }

@@ -125,9 +125,8 @@ export const getDropdownData = (openFilter, filterValue) => {
 };
 
 export const dateTable = (movie) => {
-  const { year, countries = [], genres = [], filmLength, ratingAgeLimits, slogan = '' } = movie;
+  const { year, countries = [], genres = [], filmLength, ratingAgeLimits } = movie;
   return [
-    { title: 'Слоган', description: slogan?.replaceAll(/[^а-я]/gi, '') ? `${slogan}` : '-' },
     { title: 'Дата выхода', description: year ? `${year}` : '-' },
     {
       title: 'Страна',

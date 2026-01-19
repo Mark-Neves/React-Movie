@@ -1,22 +1,22 @@
 .link {
   position: relative;
-  color: #ffffff;
-  font-size: clamp(0.625rem, 0.4365rem + 0.5415vw, 1rem);
+  color: var(--color-white);
+  font-size: var(--fs-14-18);
   .button {
     position: absolute;
-    top: 0px;
-    right: -10px;
-    fill: #ffffff;
+    top: -1px;
+    right: -17px;
+    fill: var(--color-white);
     svg {
-      width: 8px;
-      height: 18px;
+      width: 15px;
+      height: 25px;
     }
   }
 
   &:hover {
-    color: #ff3d81;
+    color: var(--color-accent);
     .button {
-      fill: #ff3d81;
+      fill: var(--color-accent);
     }
   }
 }

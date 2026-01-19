@@ -12,8 +12,8 @@
     position: fixed;
     left: 10vw;
     top: 5vh;
-    background-color: #1f1f1f;
-    border-radius: 10px;
+    background-color: var(--color-background);
+    border-radius: var(--border-radius-m);
 
     .closeButton {
       position: absolute;
@@ -58,7 +58,7 @@
           }
 
           &:hover {
-            border-radius: 10px;
+            border-radius: var(--border-radius-m);
             svg {
               fill: #f9f8f8;
             }
@@ -113,7 +113,8 @@
             width: var(--card-width-Img);
             aspect-ratio: 1;
             object-fit: cover;
-            border-radius: 5px;
+            border-radius: var(--border-radius-s);
+
             transform: scale(1);
             transition: transform 0.3s ease;
           }

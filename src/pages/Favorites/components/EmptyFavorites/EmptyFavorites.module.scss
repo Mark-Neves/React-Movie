@@ -10,14 +10,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   .emptyTitle {
-    font-size: clamp(1.875rem, 1.4037rem + 1.3538vw, 2.8125rem);
+    font-size: var(--fs-30-45);
     padding-bottom: 15px;
-    color: #b4b2b2;
+    color: var(--color-gray-text);
   }
   .emptyDescription {
     text-align: center;
-    font-size: clamp(0.875rem, 0.5922rem + 0.8123vw, 1.4375rem);
-    color: #b4b2b2;
+    font-size: var(--fs-16-23);
+    color: var(--color-gray-text);
   }
 }

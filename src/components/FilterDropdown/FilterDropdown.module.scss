@@ -11,15 +11,15 @@
   z-index: 1000;
 
   background-color: rgba($color: #424242, $alpha: 0.5);
-  border: 1px solid #1f1f1f;
-  border-radius: 10px;
+  border-color: var(--color-background);
+  border-radius: var(--border-radius-m);
 
   &::-webkit-scrollbar {
     width: 3px;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: #ff3d81;
-    border-radius: 4px;
+    background-color: var(--color-accent);
+    border-radius: var(--border-radius-s);
   }
 
   .dropDownList {
@@ -28,12 +28,12 @@
     grid-row-gap: 8px;
 
     .dropDownItem {
-      border-radius: 10px;
+      border-radius: var(--border-radius-m);
       padding: 5px 7px;
       white-space: nowrap;
       &:hover {
-        color: #ffffff;
-        background-color: #1f1f1f;
+        color: var(--color-white);
+        background-color: var(--color-background);
       }
     }
   }

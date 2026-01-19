@@ -10,11 +10,11 @@
     svg {
       width: 20px;
       aspect-ratio: 1;
-      fill: #ffffff;
+      fill: var(--color-white);
     }
     &:hover {
       svg {
-        fill: #ff3d81;
+        fill: var(--color-accent);
       }
     }
   }

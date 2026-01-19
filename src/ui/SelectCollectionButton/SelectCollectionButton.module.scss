@@ -1,16 +1,13 @@
 .typeCollection {
   padding: 10px 20px;
-  font-size: clamp(0.75rem, 0.5987rem + 0.5848vw, 1.125rem);
-  border: 1px solid transparent;
-  border-radius: 60px;
+  font-size: var(--fs-14-18);
+  border-radius: var(--border-radius-xl);
   background-color: transparent;
-  color: #ffffff;
 
   &:hover {
-    border: 1px solid #ffffff;
+    border-color: var(--color-white);
   }
 }
 .active {
-  color: #ffffff;
-  border: 1px solid #ffffff;
+  border-color: var(--color-white);
 }

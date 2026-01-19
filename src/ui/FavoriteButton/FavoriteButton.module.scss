@@ -1,0 +1,33 @@
+.addButton {
+  padding: clamp(0.3125rem, 0.1554rem + 0.4513vw, 0.625rem);
+  font-size: var(--fs-14-18);
+  border-color: var(--color-white);
+  border-radius: var(--border-radius-xl);
+
+  background-color: transparent;
+  color: var(--color-white);
+
+  &:hover {
+    border-color: var(--color-accent);
+  }
+}
+
+.addButtonFavorite {
+  padding: clamp(0.3125rem, 0.1554rem + 0.4513vw, 0.625rem);
+
+  font-size: var(--fs-14-18);
+  color: var(--color-white);
+  border-radius: var(--border-radius-xl);
+
+  background-color: transparent;
+  color: var(--color-white);
+  &:hover {
+    border-color: var(--color-accent);
+  }
+}
+.active {
+  padding-inline: clamp(0.3125rem, 0.1554rem + 0.4513vw, 0.625rem);
+
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}

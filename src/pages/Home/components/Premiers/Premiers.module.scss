@@ -36,7 +36,7 @@
     }
 
     &:hover {
-      border-radius: 10px;
+      border-radius: var(--border-radius-m);
       .svg {
         fill: #f9f8f8;
       }

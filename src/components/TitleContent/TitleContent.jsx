@@ -1,72 +1,39 @@
 import styles from './TitleContent.module.scss';
 
+import { useContext } from 'react';
+import { FavoritesContext } from '../helpers/GlobalContext';
+
 import { Link } from 'react-router-dom';
-
-import { dataStorage, favoritesItem } from '../helpers/filterConfig';
-
+import { LinkList } from '../../pages/Content/components/LinkList/LinkList';
+import { MovieRating } from '../../pages/Content/components/ MovieRating/MovieRating';
+import { FavoriteButton } from '../../ui/FavoriteButton/FavoriteButton';
 import { TableDetails } from '../../pages/Content/components/TableDetails/TableDetails';
-import { useState } from 'react';
-import { useEffect } from 'react';
+
+import { favoritesItem } from '../helpers/filterConfig';
 
 export function TitleContent({ movie, linkList, actorList, isCompact = false }) {
   const { kinopoiskId, filmId, posterUrl, nameRu, description } = movie;
-
-  const storage = dataStorage.get('favorite', []);
-  const [favoritesList, setFavoritesList] = useState(storage);
-
-  const isFavorite = (id) => {
-    return favoritesList.some((el) => el.id === id);
-  };
-
-  const addFavoritesList = (obj) => {
-    setFavoritesList((prev) => [...prev, obj]);
-  };
-  const deleteFavoritesList = (id) => {
-    setFavoritesList((prev) => prev.filter((el) => el.id !== id));
-  };
-  const updateFavoritesList = (id, obj) => {
-    isFavorite(id) ? deleteFavoritesList(id) : addFavoritesList(obj);
-  };
-
-  useEffect(() => {
-    dataStorage.set('favorite', favoritesList);
-  }, [favoritesList]);
-
   const id = kinopoiskId ?? filmId;
+
+  const { isFavorite, updateFavoritesList } = useContext(FavoritesContext);
+
   const favorite = isFavorite(id);
+  const updateFavorite = () => {
+    updateFavoritesList(id, favoritesItem(id, movie, actorList));
+  };
 
   const wrapper = isCompact ? styles.favoriteWrapper : styles.wrapper;
-  const poster = isCompact ? styles.faworitePoster : styles.poster;
-  const title = isCompact ? styles.faworiteTitle : styles.title;
-  const addButton = isCompact ? styles.addButtonFavorite : styles.addButton;
-  const wrapperRating = isCompact ? styles.wrapperRatingFavorite : styles.wrapperRating;
+  const poster = isCompact ? styles.favoritePoster : styles.poster;
+  const title = isCompact ? styles.favoriteTitle : styles.title;
   const contentDescription = isCompact ? styles.faworiteDescription : styles.contentDescription;
 
   return (
-    <div className={wrapper}>
+    <div className={wrapper} data-testid='title-content'>
       <div className={styles.wrapperPoster}>
         <Link to={`/content/${id}`}>
           <img src={posterUrl} alt={`Постер ${nameRu}`} className={poster} loading='lazy' />
         </Link>
-
-        {linkList && linkList.length ? (
-          <div className={styles.wrapperLink}>
-            <p className={styles.linkTitle}>Смотреть на:</p>
-            <ul className={styles.linkList}>
-              {linkList.map((el) => (
-                <li className={styles.linkItem} key={el.platform}>
-                  <a href={el.url} target='_blank'>
-                    <img
-                      className={styles.linkItemImg}
-                      src={el.logoUrl}
-                      alt={`Логотип ${el.platform}`}
-                    />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
+        <LinkList listItem={linkList} />
       </div>
       <div className={styles.wrapperContent}>
         <div className={styles.wrapperTitle}>
@@ -74,24 +41,10 @@ export function TitleContent({ movie, linkList, actorList, isCompact = false }) 
             <h2 className={title}>
               <Link to={`/content/${id}`}>{nameRu}</Link>
             </h2>
-
-            <button
-              className={`${addButton} ${favorite && styles.active}`}
-              onClick={() => updateFavoritesList(id, favoritesItem(id, movie, actorList))}
-            >
-              {favorite ? 'Добавлен' : 'В избранное'}
-            </button>
+            <FavoriteButton isFavorite={favorite} onClick={updateFavorite} isCompact={isCompact} />
           </div>
-          {(movie.ratingKinopoisk || movie.ratingImdb) && (
-            <div className={wrapperRating}>
-              {movie.ratingKinopoisk && (
-                <p className={styles.rating}>Кинопоиск {movie.ratingKinopoisk}/10</p>
-              )}
-              {movie.ratingImdb && <p className={styles.rating}>IMDb {movie.ratingImdb}/10</p>}
-            </div>
-          )}
+          <MovieRating movie={movie} isCompact={isCompact} />
         </div>
-
         <p className={contentDescription}>{description}</p>
         <TableDetails movie={movie} actorList={actorList} isCompact={isCompact} />
       </div>

@@ -9,7 +9,7 @@ export const Skeleton = () => (
       height='clamp(21.875rem, 18.1047rem + 10.8303vw, 29.375rem)'
       viewBox='0 0 270 470'
       backgroundColor='#4f4f4f'
-      foregroundColor='#ff3d81'
+      foregroundColor='var( --color-accent)'
     >
       <rect x='0' y='0' rx='10' ry='10' width='269' height='374' />
       <rect x='0' y='387' rx='10' ry='10' width='269' height='20' />

@@ -16,7 +16,7 @@ export function Footer() {
           Главная
         </Link>
         <Link to='/search?type=popular' onClick={scrollTo}>
-          Фильмы
+          Топовые коллекции
         </Link>
       </nav>
     </footer>

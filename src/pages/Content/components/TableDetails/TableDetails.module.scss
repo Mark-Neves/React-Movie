@@ -7,8 +7,8 @@
   table {
     td {
       padding-block: clamp(0.625rem, 0.4679rem + 0.4513vw, 0.9375rem);
-      color: #acaaaa;
-      font-size: clamp(0.875rem, 0.7493rem + 0.361vw, 1.125rem);
+      color: var(--color-table-text);
+      font-size: var(--fs-14-18);
 
       &:first-child {
         padding-right: clamp(1.25rem, -1.2635rem + 7.2202vw, 6.25rem);

@@ -4,11 +4,11 @@
   align-items: center;
   padding-block: clamp(0.625rem, 0.3108rem + 0.9025vw, 1.25rem);
   padding-inline: clamp(1.25rem, -0.9493rem + 6.3177vw, 5.625rem);
-  background-color: #1f1f1f;
+  background-color: var(--color-background);
 
   .title {
     font-size: clamp(1.125rem, 0.748rem + 1.083vw, 1.875rem);
-    color: #ff3d81;
+    color: var(--color-accent);
   }
 
   .navigation {
@@ -17,7 +17,7 @@
     gap: clamp(0.625rem, -0.3176rem + 2.7076vw, 2.5rem);
 
     a {
-      font-size: clamp(0.75rem, 0.6491rem + 0.3899vw, 1rem);
+      font-size: var(--fs-12-16);
       color: rgba(243, 241, 241, 0.6);
     }
   }

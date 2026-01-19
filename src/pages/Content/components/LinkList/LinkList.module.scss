@@ -1,0 +1,22 @@
+.wrapperLink {
+  .linkTitle {
+    font-size: 18px;
+    padding-block: 20px;
+    color: var(--color-table-text);
+  }
+  .linkList {
+    display: flex;
+    gap: 18px;
+    .linkItem {
+      .linkItemImg {
+        width: clamp(2.5rem, 1.7459rem + 2.1661vw, 4rem);
+        aspect-ratio: 1;
+        border-radius: var(--border-radius-m);
+      }
+    }
+    @media (max-width: 730px) {
+      justify-content: center;
+      padding-bottom: 30px;
+    }
+  }
+}

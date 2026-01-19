@@ -7,7 +7,7 @@ export const SkeletonPremiers = () => (
     speed={2}
     viewBox='0 0 490 690'
     backgroundColor='#4f4f4f'
-    foregroundColor='#ff3d81'
+    foregroundColor='var( --color-accent)'
   >
     <rect x='0' y='0' rx='15' ry='15' width='100%' height='100%' />
   </ContentLoader>

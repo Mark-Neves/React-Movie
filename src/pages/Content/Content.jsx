@@ -25,6 +25,8 @@ export function Content() {
   } = useFetcher({ url: `https://kinopoiskapiunofficial.tech/api/v2.2/films/${id}` });
 
   //Список ссылок на просмотр
+  const maxNumOfLinks = 5;
+
   const {
     dataArr: linkList,
     isLoading: isLoadingLinkList,
@@ -45,6 +47,7 @@ export function Content() {
   });
 
   //Кадры из фильма
+  const cardLimited = 6;
   const {
     dataArr: stills,
     isLoading: isLoadingStills,
@@ -72,44 +75,42 @@ export function Content() {
     setIndexImg(null);
   };
 
-  return (
-    <>
-      {errorMovie ? (
-        <ErrorStub />
-      ) : !movie.posterUrl ? (
-        <MovieContentSub />
-      ) : (
-        <div className={styles.content}>
-          <TitleContent
-            movie={movie}
-            isLoadingMovie={isLoadingMovie}
-            errorMovie={errorMovie}
-            linkList={linkList.length > 5 ? linkList.slice(0, 5) : linkList}
-            isLoadingLinkList={isLoadingLinkList}
-            errorLinkList={errorLinkList}
-            actorList={actorFilters(actorList)}
-            isLoadingActorList={isLoadingActorList}
-            errorActorList={errorActorList}
-          />
+  let content;
+  if (errorMovie) content = <ErrorStub />;
+  else if (!movie.posterUrl) content = <MovieContentSub />;
+  else
+    content = (
+      <div className={styles.content}>
+        <TitleContent
+          movie={movie}
+          isLoadingMovie={isLoadingMovie}
+          errorMovie={errorMovie}
+          linkList={linkList.length > maxNumOfLinks ? linkList.slice(0, maxNumOfLinks) : linkList}
+          isLoadingLinkList={isLoadingLinkList}
+          errorLinkList={errorLinkList}
+          actorList={actorFilters(actorList)}
+          isLoadingActorList={isLoadingActorList}
+          errorActorList={errorActorList}
+        />
 
-          <StillsMovie
-            stills={stills}
-            isLoadingStills={isLoadingStills}
-            errorStills={errorStills}
-            cardLimited={6}
-            openImg={openImg}
-          />
-          {indexImg !== null && (
-            <ViewingFrames stills={stills} indexImg={indexImg} closeImg={closeImg} />
-          )}
-          <RecommendationsMovie
-            similarMovies={similarMovies}
-            isLoadingSimilar={isLoadingSimilar}
-            errorSimilar={errorSimilar}
-            visibleRows={1}
-          />
-        </div>
-      )}
-    </>
-  );
+        <StillsMovie
+          stills={stills}
+          isLoadingStills={isLoadingStills}
+          errorStills={errorStills}
+          cardLimited={cardLimited}
+          openImg={openImg}
+        />
+        {indexImg !== null && (
+          <ViewingFrames stills={stills} indexImg={indexImg} closeImg={closeImg} />
+        )}
+        <RecommendationsMovie
+          similarMovies={similarMovies}
+          isLoadingSimilar={isLoadingSimilar}
+          errorSimilar={errorSimilar}
+          visibleRows={1}
+        />
+      </div>
+    );
+
+  return content;
 }
